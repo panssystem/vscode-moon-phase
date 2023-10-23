@@ -9,7 +9,7 @@ pub struct MoonPhase {
 #[wasm_bindgen]
 pub fn get_moon_phase() -> MoonPhase {
     let moon = Moon::new(SystemTime::now());
-    let mut phase: Phase
+    let mut phase: Phase;
         for phase in PHASES.iter() {
             if moon.phase >= phase.start && moon.phase < phase.end {
                 phase = phase
