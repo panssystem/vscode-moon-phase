@@ -1,4 +1,5 @@
 use moon_calc::{Moon, Phase, PHASES};
+use std::time::SystemTime;
 
 #[wasm_bindgen]
 pub struct MoonPhase {
