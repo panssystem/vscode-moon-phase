@@ -6,7 +6,7 @@ pub struct MoonPhase {
     pub moon: Moon,
 }
 #[wasm_bindgen]
-pub fn get_moon_phase() {
+pub fn get_moon_phase() -> MoonPhase {
     let moon = Moon::new(SystemTime::now());
     let mut phase: Phase
         for phase in PHASES.iter() {
