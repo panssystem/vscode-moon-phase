@@ -1,4 +1,4 @@
-use moon-calc::{Moon, Phase, PHASES};
+use moon_calc::{Moon, Phase, PHASES};
 
 #[wasm_bindgen]
 pub struct MoonPhase {
