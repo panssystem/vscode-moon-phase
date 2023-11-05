@@ -1,2 +1,5 @@
 /target
-/Cargo.lock
+moonphase-rust/Cargo.lock
+node_modules/
+moonphase-rust/target/
+out/

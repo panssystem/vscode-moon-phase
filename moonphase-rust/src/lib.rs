@@ -33,8 +33,11 @@ impl MoonPhase {
     }
 }
 #[wasm_bindgen]
-pub fn get_moon_phase() -> MoonPhase {
-    let moon = Moon::new(SystemTime::now());
+pub fn get_current_moon_phase() -> MoonPhase {
+    get_moon_phase(SystemTime::now())
+}
+pub fn get_moon_phase(time: SystemTime) -> MoonPhase {
+    let moon = Moon::new(time);
     let mut our_phase: &Phase = &PHASES[0];
     for phase in PHASES.iter() {
         if moon.phase >= phase.start && moon.phase < phase.end {
@@ -59,7 +62,9 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+        let result = get_current_moon_phase();
+        println!("{} {} {}", result.phase_emoji, result.phase_name, result.illumination);
+        assert_eq!(result.phase_name, result.phase_name());
+        assert_eq!(result.phase_emoji, result.phase_emoji())
     }
 }
