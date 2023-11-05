@@ -3,3 +3,4 @@ moonphase-rust/Cargo.lock
 node_modules/
 moonphase-rust/target/
 out/
+moonphase-vscode/dist/

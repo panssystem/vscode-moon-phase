@@ -1,0 +1,68 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "compile-web",
+			"path": "moonphase-vscode",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$ts-webpack",
+				"$tslint-webpack",
+				"$ts-checker-webpack"
+			]
+		},
+		{
+			"type": "npm",
+			"script": "watch-web",
+			"path": "moonphase-vscode",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": [
+				"$ts-webpack-watch",
+				"$tslint-webpack-watch"
+			]
+		},
+		{
+			"type": "cargo",
+			"command": "build",
+			"group": "build",
+			"problemMatcher": [
+				"$rustc",
+				"$rust-panic",
+				"$rustc-json",
+				"$rustc-watch"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/moonphase-rust"
+			}
+		},
+		{
+			"label": "Wasm-Pack Rust",
+			"dependsOrder": "sequence",
+			"dependsOn": ["wasm-pack", "wasm-cleanup"],
+		},
+		{
+			"label": "wasm-pack",
+			"type": "process",
+			"command": "wasm-pack",
+			"args": [
+				"build",
+				"--target", "nodejs",
+				"--out-dir", "../out"
+			],
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}/moonphase-rust"
+			}
+		},
+		{
+			"label": "wasm-cleanup",
+			"type": "shell",
+			"command": "rm ${workspaceFolder}/out/.gitignore"
+		}
+	]
+}
