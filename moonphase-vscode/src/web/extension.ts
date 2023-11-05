@@ -32,7 +32,6 @@ export function activate(context: vscode.ExtensionContext) {
 				eb.insert(pos, Moon.lunarPhaseEmoji() + " " + Moon.lunarPhase());
 			});
 		}
-		vscode.window.showInformationMessage('Hello from insertPhase from moonphase in a web extension host!');
 	});
 
 	context.subscriptions.push(disposable);

@@ -10,7 +10,7 @@
 			"debugWebWorkerHost": true,
 			"request": "launch",
 			"args": [
-				"--extensionDevelopmentPath=${workspaceFolder}/moonphase",
+				"--extensionDevelopmentPath=${workspaceFolder}/moonphase-vscode",
 				"--extensionDevelopmentKind=web"
 			],
 			"outFiles": [
@@ -24,12 +24,12 @@
 			"debugWebWorkerHost": true,
 			"request": "launch",
 			"args": [
-				"--extensionDevelopmentPath=${workspaceFolder}/moonphase",
+				"--extensionDevelopmentPath=${workspaceFolder}/moonphase-vscode",
 				"--extensionDevelopmentKind=web",
-				"--extensionTestsPath=${workspaceFolder}/moonphase/dist/web/test/suite/index"
+				"--extensionTestsPath=${workspaceFolder}/moonphase-vscode/dist/web/test/suite/index"
 			],
 			"outFiles": [
-				"${workspaceFolder}/moonphase/dist/web/**/*.js"
+				"${workspaceFolder}/moonphase-vscode/dist/web/**/*.js"
 			],
 			"preLaunchTask": "npm: watch-web"
 		}
