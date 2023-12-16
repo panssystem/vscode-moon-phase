@@ -29,7 +29,8 @@ export function activate(context: vscode.ExtensionContext) {
 			let pos = vscode.window.activeTextEditor.selection.anchor;
 			vscode.window.activeTextEditor?.edit((eb) => {
 				// let mp = moonPhase.get_current_moon_phase();
-				eb.insert(pos, Moon.lunarPhaseEmoji() + " " + Moon.lunarPhase());
+				let date = new Date();
+				eb.insert(pos, Moon.lunarPhaseEmoji(date) + " " + Moon.lunarPhase(date));
 			});
 		}
 	});
